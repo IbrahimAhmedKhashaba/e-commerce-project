@@ -7,6 +7,8 @@ return [
     'edit_role'=>'Edit Authorization',
     'delete_role'=>'Delete Authorization',
     'role_name'=>'Authorization Name',
+    'role_ar' => 'Authorization Arabic Name',
+    'role_en' => 'Authorization English Name',
     'role_description'=>'Authorization Description',
     'permissions'=>'Permissions',
     'create_permission'=>'Create Permission',
@@ -207,6 +209,7 @@ return [
     'num_of_orders'=>'Num Of Orders',
     'email_verified_at'=>'Email Verified At',
     'contacts'=>'Email Application',
+    'no_data' => 'No Data',
 
 
 

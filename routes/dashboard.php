@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
+use App\Http\Controllers\Dashboard\Role\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -25,20 +26,20 @@ Route::group(
             });
             Route::post('logout', 'logout')->name('logout');
         });
-        
+
         // ############################# Reset Password ##################################
         Route::controller(ResetPasswordController::class)
-        ->middleware('guest:admin')
-        ->prefix('password')
-        ->name('password.')
-        ->group(function () {
+            ->middleware('guest:admin')
+            ->prefix('password')
+            ->name('password.')
+            ->group(function () {
                 Route::get('email', 'getEmail')->name('email');
                 Route::post('email', 'send_otp')->name('email.send_otp');
                 Route::get('{email}/confirm', 'getConfirmForm')->name('confirm');
                 Route::get('{email}/update', 'showUpdateForm')->name('showUpdateForm');
                 Route::post('verify', 'verify')->name('verify');
                 Route::post('reset', 'reset')->name('reset');
-        });
+            });
 
 
         // ############################# Protected Route ##################################
@@ -47,7 +48,7 @@ Route::group(
             Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
         });
 
-
-        
+        // ############################# Roles ##################################
+        Route::resource('/roles', RoleController::class);
     }
 );
