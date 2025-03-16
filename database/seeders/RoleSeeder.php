@@ -14,13 +14,13 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Role::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        // Role::truncate();
+        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        $permessions = [];
-        foreach(config('permessions_en') as $permession=>$value){
-            $permessions[] = $permession;
+        $permissions = [];
+        foreach(config('permissions_en') as $permission=>$value){
+            $permissions[] = $permission;
         }
 
         Role::create([
@@ -28,7 +28,7 @@ class RoleSeeder extends Seeder
                 'ar'=>'مدير',
                 'en'=>'Manger',
             ],
-            'permession'=>json_encode($permessions),
+            'permissions'=>json_encode($permissions),
         ]);
     }
 }

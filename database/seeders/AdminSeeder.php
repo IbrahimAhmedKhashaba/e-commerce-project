@@ -15,23 +15,19 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Admin::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        Admin::create([
+            'name' => 'Ibrahim Khashaba',
+            'email' => 'ibrahim@admin.com',
+            'password' => bcrypt('789789789'),
+            'role_id' => Role::first()->id,
+        ]);
+        Admin::create([
+            'name' => 'Sara',
+            'email' => 'sara@admin.com',
+            'password' => bcrypt('789789789'),
+            'role_id' => Role::first()->id,
+        ]);
 
-        $first_role_id = Role::first()->id;
-        Admin::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('password'),
-            'role_id' => $first_role_id,
-        ]);
-        Admin::create([
-            'name' => 'ali',
-            'email' => 'ali@gmail.com',
-            'password' => bcrypt('password'),
-            'role_id' => $first_role_id,
-        ]);
 
     }
 }

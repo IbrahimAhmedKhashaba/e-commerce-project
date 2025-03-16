@@ -127,6 +127,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'g-recaptcha-response'=>[
+            'required' => 'يجب عليك التحقق من أنك لست روبوت',
+        ]
     ],
 
     /*
@@ -170,5 +173,29 @@ return [
         'time'                  => 'الوقت',
         'available'             => 'مُتاح',
         'size'                  => 'الحجم',
+        'color'                  => 'اللون',
+        'quantity'              =>'الكميه',
+        'descount' =>'الخصم',
+        'price'=>'السعر',
+        'category_id'=>'القسم',
+        'minimum_withdrawal_amount' =>'الحد الادنى  للسحب',
+        'maximum_withdrawal_amount'=>'الحد الاقصى للسحب ',
+        'the_lowest_amount_in_the_account'=>'الحد الادنى للمبلغ المتبقي في الحساب',
+        'method '=>'وسيله الدفع',
+        'governorate_id'=>'المحافظه',
+        'city_id'=>'المدينه',
+        'health_certificate'=>'الشهاده الصحيه',
+        'terms'=>'الموافقه علي الشروط مطلوبه',
+        'otp'=>'رمز التحقق',
+        'method'=>'وسيله السحب',
+        'body'=>'المحتوى',
+        'role.en'=>' اسم الترقيه ب الانجليزي',
+        'role.ar'=>'اسم الترقيه ب العربي   ',
+        'name.en'=>'الاسم  بالانجليزي',
+        'name.ar'=>'الاسم  بالعربي',
+        'code' =>'الكود',
+
     ],
+
+
 ];
