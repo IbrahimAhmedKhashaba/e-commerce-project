@@ -5,6 +5,7 @@ return [
     'roles'=>'الصلاحيات',
     'create_role'=>'اضافة صلاحية',
     'edit_role'=>'تعديل صلاحية',
+    'select_role' => 'اختر الصلاحية',
     'delete_role'=>'حذف صلاحية',
     'role_name'=>'اسم الصلاحية',
     'role_ar'=>'اسم الصلاحية بالعربية',
@@ -12,6 +13,8 @@ return [
     'role_description'=>'وصف الصلاحية',
     'role_permissions'=>'صلاحيات الصلاحية',
     'role'=>'صلاحية',
+
+    'edit_admin' => 'تعديل مسئول',
 
     'success_msg'=>'تمت العملية بنجاح',
     'error_msg'=>'هناك خطأ ما',
@@ -37,6 +40,7 @@ return [
     'close'=>'اغلاق',
     'email'=>'البربدالالكتروني',
     'password'=>'كلمة السر',
+    'password_confirmation'=>'كلمة السر',
     'name'=>'الاسم',
     'phone'=>'Phone',
     'address'=>'Address',
@@ -177,6 +181,9 @@ return [
     'contacts'=>'اداره التواصل',
 
     'no_data' => 'لا توجد بيانات',
+
+    'select_status' => 'اختر الحالة',
+    'password_message' => ' أدخل كلمة سرية جديدة إذا أردت تغييرها',
 
 
 ];

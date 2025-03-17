@@ -37,6 +37,22 @@
             </li>
           </ul>
         </li>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.roles') }}</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('dashboard.roles.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.roles') }}</a>
+            </li>
+            <li><a class="menu-item" href="{{ route('dashboard.roles.create') }}" data-i18n="nav.roles.horz.main">{{ __('dashboard.create_role') }}</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.roles') }}</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('dashboard.roles.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.roles') }}</a>
+            </li>
+            <li><a class="menu-item" href="{{ route('dashboard.roles.create') }}" data-i18n="nav.roles.horz.main">{{ __('dashboard.create_role') }}</a>
+            </li>
+          </ul>
+        </li>
         <li class=" navigation-header">
           <span data-i18n="nav.category.layouts">Layouts</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Layouts"></i>

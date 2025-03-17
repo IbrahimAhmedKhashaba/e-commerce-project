@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Admin\AdminController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Role\RoleController;
@@ -50,5 +51,14 @@ Route::group(
 
         // ############################# Roles ##################################
         Route::resource('/roles', RoleController::class);
+
+        // ############################# Admins ##################################
+        Route::resource('/admins', AdminController::class)->except(['show']);
+        Route::get('/admins/{id}/status', [AdminController::class , 'status'])->name('admins.status');
+        Route::get('/admins/{key}/search', [AdminController::class , 'search'])->name('admins.search');
+
+        Route::get('delete' , function(){
+            return view('dashboard.roles.delete');
+        });
     }
 );

@@ -1,3 +1,6 @@
 @import url("bootstrap-extended.css");
 @import url("colors.css");
 @import url("components.css");
+body{
+    text-align: left important;
+}

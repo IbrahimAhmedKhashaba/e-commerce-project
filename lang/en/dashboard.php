@@ -5,6 +5,7 @@ return [
     'roles'=>'Authorizations',
     'create_role'=>'Create Authorization',
     'edit_role'=>'Edit Authorization',
+    'select_role'=>'Select Authorization',
     'delete_role'=>'Delete Authorization',
     'role_name'=>'Authorization Name',
     'role_ar' => 'Authorization Arabic Name',
@@ -16,6 +17,9 @@ return [
     'delete_permission'=>'Delete Permission',
     'permission_name'=>'Permission Name',
     'permission_description'=>'Permission Description',
+
+    'create_admin'=>'Create Admin',
+    'edit_admin'=>'Edit Admin',
 
     'success_msg'=>'Operation Done Successfuly',
     'error_msg'=>'Operation Failed',
@@ -38,6 +42,7 @@ return [
     'close'=>'Close',
     'email'=>'Email',
     'password'=>'Password',
+    'password_confirmation' =>'Password Confirmation',
     'name'=>'Name',
     'phone'=>'Phone',
     'address'=>'Address',
@@ -210,6 +215,9 @@ return [
     'email_verified_at'=>'Email Verified At',
     'contacts'=>'Email Application',
     'no_data' => 'No Data',
+
+    'select_status' => 'Select Status',
+    'password_message' => 'Enter Password if you want to change it',
 
 
 

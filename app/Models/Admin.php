@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Carbon\Carbon;
 
 class Admin extends Authenticatable
 {
@@ -32,7 +34,6 @@ class Admin extends Authenticatable
         'password',
         'remember_token',
     ];
-
     /**
      * Get the attributes that should be cast.
      *
@@ -43,6 +44,8 @@ class Admin extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'created_at' => 'datetime:Y-m-d',
+            'updated_at' => 'datetime:Y-m-d',
         ];
     }
 
@@ -61,6 +64,13 @@ class Admin extends Authenticatable
             }
         }
 
+    }
+
+    protected function status(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => $value == 1 ? 'Active' : 'Inactive',
+        );
     }
 
     public function role(){
