@@ -66,24 +66,25 @@
                                 <tbody>
 
                                     @forelse ($roles as $role)
+                                    {{-- {{  dd($role)}} --}}
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $role->role }} </td>
                                             <td>
 
                                                 @if (config('app.locale') == 'ar')
-                                                    @foreach (json_decode($role->permissions) as $perm)
                                                         @foreach (Config::get('permissions_ar') as $key => $value)
-                                                            @if ($key == $perm)
+                                                            @if (in_array($key , json_decode($role->permissions) ))
                                                                 <span class="badge badge-success">
                                                                     {{ $value }}
                                                                 </span>
                                                             @endif
-                                                        @endforeach
                                                     @endforeach
                                                 @else
-                                                    @foreach ($role->permissions as $perm)
+                                                    @foreach (json_decode($role->permissions) as $perm)
+                                                    <span class="badge badge-success">
                                                         {{ $perm }},
+                                                        </span>
                                                     @endforeach
                                                 @endif
 
