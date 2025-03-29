@@ -45,10 +45,11 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'mobile' => fake()->unique()->phoneNumber(),
             'is_active' => 1,
             'country_id' => $country->id,
             'governorate_id' => $governorate->id,
-            'city_id' => random_int(1, 4),
+            'city_id' => random_int(1, 6),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

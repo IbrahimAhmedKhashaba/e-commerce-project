@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Carbon\Carbon;
 
+use function PHPSTORM_META\type;
+
 class Admin extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -51,20 +53,19 @@ class Admin extends Authenticatable
 
     public function hasAccess($config_permission)  // products , users , admins
     {
+return true;
 
-        $role = $this->role;
+        // $role = $this->role;
 
-        if(!$role){
-            return false;
-        }
-
-        foreach($role->permission as $permission){
-            if($config_permission == $permission ?? false){
-                  return true;
-            }
-        }
-
+        // if(!$role){
+        //     return false;
+        // }
+        // if(in_array( $config_permission , json_decode($role->permissions))){
+        //     return true;
+        // }
+        // return false;
     }
+
 
     protected function status(): Attribute
     {

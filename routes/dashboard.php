@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Role\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
+use App\Http\Controllers\Dashboard\World\WorldController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -44,7 +45,7 @@ Route::group(
 
 
         // ############################# Protected Route ##################################
-        Route::group(['middleware' => 'auth:admin'], function () {
+        Route::group(['middleware' => ['auth:admin' , 'can:home']], function () {
             // ############################# Home ##################################
             Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
         });
@@ -54,11 +55,23 @@ Route::group(
 
         // ############################# Admins ##################################
         Route::resource('/admins', AdminController::class)->except(['show']);
-        Route::get('/admins/{id}/status', [AdminController::class , 'status'])->name('admins.status');
-        Route::get('/admins/{key}/search', [AdminController::class , 'search'])->name('admins.search');
+        Route::get('/admins/{id}/status', [AdminController::class, 'status'])->name('admins.status');
+        Route::get('/admins/{key}/search', [AdminController::class, 'search'])->name('admins.search');
 
-        Route::get('delete' , function(){
-            return view('dashboard.roles.delete');
-        });
+
+        // ############################# World ##################################
+        Route::controller(WorldController::class)
+            ->group(function () {
+                Route::prefix('countries')->name('countries.')->group(function () {
+                    Route::get('/', 'getAllCountries')->name('index');
+                    Route::get('/{id}/status', 'changeStatus')->name('status');
+                    Route::get('/{id}/governorates', 'getAllGovernorates')->name('governorates.index');
+                });
+
+                Route::prefix('governorates')->name('governorates.')->group(function () {
+                    Route::get('/{id}/governorate/status', 'changeGovernorateStatus')->name('status');
+                    Route::put('/shipping-price', 'ChangeShippingPrice')->name('shipping-price');
+                });
+            });
     }
 );
