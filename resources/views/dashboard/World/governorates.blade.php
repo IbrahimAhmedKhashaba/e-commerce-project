@@ -87,7 +87,7 @@
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td>{{ $gov->name }}</td>
                                                 <td>{{ $gov->country->name }} <i
-                                                         class="flag-icon flag-icon-{{ $gov->country->flag_code }}"></i>
+                                                        class="flag-icon flag-icon-{{ $gov->country->flag_code }}"></i>
                                                 </td>
 
                                                 <td>
@@ -96,13 +96,13 @@
                                                 </td>
                                                 <td>
                                                     <div class="badge badge-pill badge-border border-primary success lg">
-                                                        {{ $gov->users_count}}
+                                                        {{ $gov->users_count }}
                                                     </div>
                                                 </td>
 
                                                 <td>
                                                     <div id="status_{{ $gov->id }}"
-                                                        class="badge badge-pill badge-border @if($gov->is_active == 'Active' || $gov->is_active == 'مفعل') border-success @else border-danger @endif success lg">
+                                                        class="badge badge-pill badge-border @if ($gov->is_active == 'Active' || $gov->is_active == 'مفعل') border-success @else border-danger @endif success lg">
                                                         {{ $gov->is_active }}</div>
                                                 </td>
 
@@ -172,14 +172,14 @@
 
                         $('.tostar_success').text(response.message).show();
 
-                        if(response.data.is_active == 'Active' || response.data.is_active == 'مفعل'){
+                        if (response.data.is_active == 'Active' || response.data.is_active == 'مفعل') {
 
-$('#status_'+ response.data.id).toggleClass('border-danger');
-$('#status_'+ response.data.id).toggleClass('border-success');
-}else{
-$('#status_'+ response.data.id).toggleClass('border-success');
-$('#status_'+ response.data.id).toggleClass('border-danger');
-}
+                            $('#status_' + response.data.id).toggleClass('border-danger');
+                            $('#status_' + response.data.id).toggleClass('border-success');
+                        } else {
+                            $('#status_' + response.data.id).toggleClass('border-success');
+                            $('#status_' + response.data.id).toggleClass('border-danger');
+                        }
 
                         // change status
                         $('#status_' + response.data.id).empty();
@@ -228,7 +228,7 @@ $('#status_'+ response.data.id).toggleClass('border-danger');
 
                 error: function(data) {
                     var response = $.parseJSON(data.responseText);
-                    $('#errors_'+gov_id).text(response.errors.price).show();
+                    $('#errors_' + gov_id).text(response.errors.price).show();
                 },
 
 

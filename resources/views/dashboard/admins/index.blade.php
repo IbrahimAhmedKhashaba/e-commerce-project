@@ -148,9 +148,6 @@
         $(document).ready(function() {
             $(document).on('input', '#search', function() {
                 const search = $(this).val();
-                if (search == '') {
-                    search = 'all';
-                }
                 $.ajax({
                     url: "{{ route('dashboard.admins.search', ':search') }}".replace(':search',
                         search),
@@ -159,6 +156,7 @@
                         $('#admins').empty();
 
                         data.forEach((admin, index) => {
+                            console.log(admin);
                             const statusClass = admin.status === 'Active' ?
                                 'bg-success' : 'bg-danger';
                             const statusText = admin.status === 'Active' ?
@@ -169,13 +167,15 @@
                             const toggleText = admin.status === 'Active' ?
                                 "{{ __('dashboard.inactive') }}" :
                                 "{{ __('dashboard.active') }}";
-
+                            
+                            var locale = "{{ $admin->role->role }}";
+                            console.log(locale);
                             const row = `
                             <tr>
                                 <th scope="row">${index + 1}</th>
                                 <td>${admin.name}</td>
                                 <td>${admin.email}</td>
-                                <td>${admin.role.role}</td>
+                                <td>${locale}</td>
                                 <td>
                                     <span class="badge ${statusClass}">${statusText}</span>
                                 </td>

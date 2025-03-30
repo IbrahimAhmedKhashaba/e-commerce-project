@@ -37,11 +37,11 @@
             </li>
           </ul>
         </li>
-        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.roles') }}</span></a>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.admins.main">{{ __('dashboard.admins') }}</span></a>
           <ul class="menu-content">
-            <li><a class="menu-item" href="{{ route('dashboard.roles.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.roles') }}</a>
+            <li><a class="menu-item" href="{{ route('dashboard.admins.index') }}" data-i18n="nav.admins.vert.main">{{ __('dashboard.admins') }}</a>
             </li>
-            <li><a class="menu-item" href="{{ route('dashboard.roles.create') }}" data-i18n="nav.roles.horz.main">{{ __('dashboard.create_role') }}</a>
+            <li><a class="menu-item" href="{{ route('dashboard.admins.create') }}" data-i18n="nav.admins.horz.main">{{ __('dashboard.create_admin') }}</a>
             </li>
           </ul>
         </li>
@@ -50,6 +50,12 @@
             <li><a class="menu-item" href="{{ route('dashboard.roles.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.roles') }}</a>
             </li>
             <li><a class="menu-item" href="{{ route('dashboard.roles.create') }}" data-i18n="nav.roles.horz.main">{{ __('dashboard.create_role') }}</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.countries') }}</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('dashboard.countries.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.countries') }}</a>
             </li>
           </ul>
         </li>
