@@ -53,9 +53,21 @@
             </li>
           </ul>
         </li>
-        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.countries') }}</span></a>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.roles.main">{{ __('dashboard.shipping') }}</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="{{ route('dashboard.countries.index') }}" data-i18n="nav.roles.vert.main">{{ __('dashboard.countries') }}</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.categories.main">{{ __('dashboard.categories') }}</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('dashboard.categories.index') }}" data-i18n="nav.categories.vert.main">{{ __('dashboard.categories') }}</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="#"><i class="la la-television"></i><span class="menu-title" data-i18n="nav.brands.main">{{ __('dashboard.brands') }}</span></a>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="{{ route('dashboard.brands.index') }}" data-i18n="nav.brands.vert.main">{{ __('dashboard.brands') }}</a>
             </li>
           </ul>
         </li>

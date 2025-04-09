@@ -81,7 +81,7 @@ return [
    'name_ar'=>'Name Arabic',
    'name_en'=>'Name English',
     'image'=>'Image',
-    'select_Parent'=>'Select Parent Category',
+    'select_parent'=>'Select Parent Category',
     'form_edit'=>'Edit Form',
     'category_edit'=>'Edit Category',
     'create_category'=>'Create Category',
@@ -218,6 +218,17 @@ return [
 
     'select_status' => 'Select Status',
     'password_message' => 'Enter Password if you want to change it',
+
+    'change_status' => 'Change status',
+
+    'title_alert' => 'Are yo sure?',
+    'text_alert' => 'You will not be able to recover this!',
+    'confirm_alert' => 'Yes Delete',
+    'close_alert' => 'No cancel',
+    'title_confirm' => 'Deleted',
+    'text_confirm' => 'Deleted Successfully',
+    'title_close' => 'Canceled',
+    'text_close' => 'Deleting process has been canceled',
 
 
 

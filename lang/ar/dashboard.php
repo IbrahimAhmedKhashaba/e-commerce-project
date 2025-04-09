@@ -81,7 +81,7 @@ return [
     'name_en'=>'الاسم بالانجليزية',
     'image'=>'الصورة',
 
-    'select_Parent'=>'اختارالصنف الرئيسي',
+    'select_parent'=>'اختارالصنف الرئيسي',
     'form_edit'=>'الشكل تعديل',
     'category_edit'=>'تعديل القسم',
     'create_category'=>'انشاء قسم',
@@ -184,6 +184,17 @@ return [
 
     'select_status' => 'اختر الحالة',
     'password_message' => ' أدخل كلمة سرية جديدة إذا أردت تغييرها',
+
+    'change_status' => 'تغيير الحالة',
+
+    'title_alert' => 'هل أنت متأكد من عملية الحذف',
+    'text_alert' => 'لن تكون قادرا على إلغاء هذه العملية',
+    'confirm_alert' => 'نعم حذف',
+    'close_alert' => 'إلغاء',
+    'title_confirm' => 'حذف',
+    'text_confirm' => 'تم الحذف بنجاح',
+    'title_close' => 'إلغاء',
+    'text_close' => 'تم إلغاء عملية الحذف',
 
 
 ];

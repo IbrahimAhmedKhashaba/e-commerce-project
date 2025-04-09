@@ -21,7 +21,7 @@ class WorldRepository
     {
         return $country->governorates()->when(request()->has('keyword') , function($query){
             $query->where('name' , 'like' , '%'.request()->keyword.'%');
-        })->with('country')->withCount(['users' , 'cities'])->paginate(10);
+        })->with('country' , 'shippingPrice')->withCount(['users' , 'cities'])->paginate(10);
     }
 
     public function getAllCities($governorate)
@@ -36,7 +36,7 @@ class WorldRepository
 
     public function getGovernorateById($id)
     {
-        return Governorate::with('cities')->find($id);
+        return Governorate::with('cities' , 'shippingPrice')->find($id);
     }
 
     public function changeStatus($model)

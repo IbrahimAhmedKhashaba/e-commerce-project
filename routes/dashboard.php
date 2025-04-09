@@ -3,6 +3,8 @@
 use App\Http\Controllers\Dashboard\Admin\AdminController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
+use App\Http\Controllers\Dashboard\Brand\BrandController;
+use App\Http\Controllers\Dashboard\Category\CategoryController;
 use App\Http\Controllers\Dashboard\Role\RoleController;
 use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\Dashboard\World\WorldController;
@@ -45,7 +47,7 @@ Route::group(
 
 
         // ############################# Protected Route ##################################
-        Route::group(['middleware' => ['auth:admin' , 'can:home']], function () {
+        Route::group(['middleware' => ['auth:admin', 'can:home']], function () {
             // ############################# Home ##################################
             Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome');
         });
@@ -73,5 +75,13 @@ Route::group(
                     Route::put('/shipping-price', 'ChangeShippingPrice')->name('shipping-price');
                 });
             });
+
+        // ############################# Categories ##################################
+        Route::resource('/categories', CategoryController::class);
+        Route::get('/categories/{id}/status', [CategoryController::class, 'changeStatus'])->name('categories.status');
+        Route::get('/categories-all', [CategoryController::class, 'getALl'])->name('categories.all');
+
+        // ############################# Brands ##################################
+        Route::resource('/brands', BrandController::class);
     }
 );

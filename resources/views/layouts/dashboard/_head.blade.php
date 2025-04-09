@@ -19,7 +19,7 @@ rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/fonts/simple-line-icons/style.css">
 
-
+@stack('css')
 @if(Config::get('app.locale') == 'ar')
 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard')}}/css-rtl/vendors.css">
