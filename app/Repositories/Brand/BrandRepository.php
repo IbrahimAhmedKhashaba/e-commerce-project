@@ -2,13 +2,25 @@
 
 namespace App\Repositories\Brand;
 
+use App\Models\Brand;
+
 class BrandRepository
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
+    public function getBrands()
     {
-        //
+        return Brand::all();
+    }
+
+    public function getBrand($id)
+    {
+        return Brand::find($id);
+    }
+
+    public function store($request)
+    {
+        return Brand::create([
+            'name' => $request->name,
+            
+        ]);
     }
 }

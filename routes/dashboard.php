@@ -83,5 +83,7 @@ Route::group(
 
         // ############################# Brands ##################################
         Route::resource('/brands', BrandController::class);
+        Route::get('/brands/{id}/status', [BrandController::class, 'changeStatus'])->name('brands.status');
+        Route::get('/brands-all', [BrandController::class, 'getALl'])->name('brands.all');
     }
 );

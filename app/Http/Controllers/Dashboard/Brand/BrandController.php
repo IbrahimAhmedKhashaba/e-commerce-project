@@ -3,21 +3,26 @@
 namespace App\Http\Controllers\Dashboard\Brand;
 
 use App\Http\Controllers\Controller;
+use App\Services\Brand\BrandService;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private $brandService;
+    public function __construct(BrandService $brandService)
+    {
+        $this->brandService = $brandService;
+    }
     public function index()
     {
         //
+        return view('dashboard.brands.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function getALl(){
+        return $this->brandService->getAllBrandsForDataTables();
+    }
+    
     public function create()
     {
         //
